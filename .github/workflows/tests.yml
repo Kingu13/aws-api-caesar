@@ -29,6 +29,5 @@ jobs:
 
     - name: Test
       run: | 
-        cd Tests
         dotnet test Tests.csproj
         --configuration Release --no-build
