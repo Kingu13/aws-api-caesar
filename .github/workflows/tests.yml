@@ -19,14 +19,16 @@ jobs:
       with:
         dotnet-version: '6.x' 
 
-    - name: Change directory to project
-      run: cd Tests
-
     - name: Restore dependencies
       run: dotnet restore
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: |
+        cd Tests
+        dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test Tests.csproj --configuration Release --no-build
+      run: | 
+        cd Tests
+        dotnet test Tests.csproj
+        --configuration Release --no-build
