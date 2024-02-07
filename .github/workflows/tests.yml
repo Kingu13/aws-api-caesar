@@ -19,6 +19,9 @@ jobs:
       with:
         dotnet-version: '6.x' 
 
+    - name: Change directory to project
+      run: cd Tests
+
     - name: Restore dependencies
       run: dotnet restore
 
