@@ -54,7 +54,13 @@ namespace Caesar;
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/Caesar/Encrypt", async context =>
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Welcome To The Caesar Cihper Encrypt And Decrypt!\n");
+                    await context.Response.WriteAsync("Use /Encrypt?text=(What to encrypt)\n");
+                    await context.Response.WriteAsync("Use /Decrypt?text=(What to decrypt)\n");
+                });
+                endpoints.MapGet("/Encrypt", async context =>
                 {
                     string text = context.Request.Query["text"];
 
@@ -63,7 +69,7 @@ namespace Caesar;
                     await context.Response.WriteAsync(encryptedText);
                 });
 
-                endpoints.MapGet("/Caesar/Decrypt", async context =>
+                endpoints.MapGet("/Decrypt", async context =>
                 {
                     string text = context.Request.Query["text"];
 
