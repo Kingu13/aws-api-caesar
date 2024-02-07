@@ -29,5 +29,4 @@ jobs:
 
     - name: Test
       run: | 
-        dotnet test TestxUnit.csproj
-        --configuration Release --no-build
+        dotnet test TestxUnit.csproj --configuration Release --no-build
