@@ -24,10 +24,10 @@ jobs:
 
     - name: Build
       run: |
-        cd Tests
+        cd TestxUnit
         dotnet build --configuration Release --no-restore
 
     - name: Test
       run: | 
-        dotnet test Tests.csproj
+        dotnet test TestxUnit.csproj
         --configuration Release --no-build
